@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  --app-font-scale: 1;
+}
+
+body {
+  font-size: calc(1rem * var(--app-font-scale, 1));
+  background-color: #111827;
+  color: #F9FAFB;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* High Contrast Overrides */
+body.high-contrast-mode {
+  background-color: #000000 !important;
+}
+
+body.high-contrast-mode .contrast-container {
+  background-color: #050505 !important;
+  border-color: #FACC15 !important; /* Vivid Yellow */
+}
+
+body.high-contrast-mode .contrast-border {
+  border-color: #FACC15 !important;
+}
+
+body.high-contrast-mode .contrast-text-bright {
+  color: #FFFFFF !important;
+}
+
+/* Severe Hypoxia Alert Flashing Animation */
+@keyframes criticalPulseBorder {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+    border-color: #EF4444;
+  }
+  50% {
+    box-shadow: 0 0 25px 6px rgba(239, 68, 68, 0.7);
+    border-color: #F87171;
+    background-color: rgba(185, 28, 28, 0.15);
+  }
+}
+
+.animate-hypoxia-alert {
+  animation: criticalPulseBorder 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Audio wave bars animation */
+@keyframes audioWaveBar1 {
+  0%, 100% { height: 12px; }
+  50% { height: 38px; }
+}
+@keyframes audioWaveBar2 {
+  0%, 100% { height: 28px; }
+  50% { height: 14px; }
+}
+@keyframes audioWaveBar3 {
+  0%, 100% { height: 16px; }
+  50% { height: 44px; }
+}
+@keyframes audioWaveBar4 {
+  0%, 100% { height: 34px; }
+  50% { height: 18px; }
+}
+
+.audio-bar-1 { animation: audioWaveBar1 0.7s ease-in-out infinite; }
+.audio-bar-2 { animation: audioWaveBar2 0.5s ease-in-out infinite; }
+.audio-bar-3 { animation: audioWaveBar3 0.8s ease-in-out infinite; }
+.audio-bar-4 { animation: audioWaveBar4 0.6s ease-in-out infinite; }
+
+/* Tactile button active push state */
+.tactile-btn {
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.15s ease;
+}
+
+.tactile-btn:active {
+  transform: translateY(2px) scale(0.985);
+}

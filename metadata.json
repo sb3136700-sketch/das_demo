@@ -1,0 +1,6 @@
+{
+  "name": "S1 Healthcare Speed Demon",
+  "description": "Frontline tactile healthcare triage and offline-first sync engine for rural health workers with FHIR compliance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
